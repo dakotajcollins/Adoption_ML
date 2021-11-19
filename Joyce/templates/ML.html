@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Adoption Report</title>
+
+        <!-- Favicon-->
+        <link href="{{url_for('static', filename='assets/favicon.ico')}}" rel="icon" type="image/x-icon" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Bootstrap Switch Button -->
+        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        {% block styles %}
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+        {% endblock %}
+
+        {% block scripts %}
+        <!-- Core theme JS-->
+        <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+        {% endblock %}
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">Pet Adoption</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#spervised">Spervised</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#unspervised">Unspervised</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nn">Neunarl Network</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="MLmasthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Explore Machine Learning Model </h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Findout different typr/features of dog adoption times.</p>
+                        <a class="btn btn-primary btn-xl" href="#spervised">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- spervised-->
+        <section class="page-section bg-secondary" id="spervised">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Spervised Model -- Random Forest</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4 text-start"> Seclect the input feature: predict the adoption times of each breed and size!!
+                            <br>
+                            <br>
+                            GVA is a nonprofit whose mission is to provide free online public access to accurate information about gun-related violence in the United States. Our group is in no way affiliated with GVA.
+                            The full dataset that we used can be accessed via API or the Github link on the “API” page of this website.
+                          </p>
+                        <button class="btn btn-light btn-xl" data-bs-toggle="modal" data-bs-target="#supervised_moadl">Get Started!</button>
+                    </div>
+                    
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <br>
+                            
+                            {% with messages = get_flashed_messages() %}
+                            {%if messages%}
+                            {% for message in messages%}
+                            <h2 class="text-white mt-0">{{message}}</h2>
+
+                            {%if image%}
+                            <img src="{{image}}" width="200" height="300"/>
+                            {% endif %}
+
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith%}
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <Modal supervised> -->
+                <div class="modal fade" id="supervised_moadl" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="modal-body text-center pb-5">
+    
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h3 class="portfolio-modal-title text-secondary text-uppercase mb-0">Input Feature</h3>
+                        </div>
+                    </div>
+                <form action="{{ url_for('spervised') }}" method="POST" action="/spervised">
+                    <select class="form-select" name="primary_breed" aria-label="Default select example">
+                        <option selected>Primary Breed</option>
+                        <option value="Speciality">Speciality</option>
+                        <option value="Labrador Retriever">Labrador Retriever</option>
+                        <option value="Pit Bull Terrier">Pit Bull Terrier</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Mixed Breed">Mixed Breed</option>
+                        <option value="Terrier">Terrier</option>
+                        <option value="German Shepherd Dog">German Shepherd Dog</option>
+                        <option value="Shepherd">Shepherd</option>
+                        <option value="Hound">Hound</option>
+                        <option value="Beagle">Beagle</option>
+                        <option value="Boxer">Boxer</option>
+                        <option value="Australian Cattle Dog / Blue Heeler">Australian Cattle Dog / Blue Heeler</option>
+                        <option value="Australian Shepherd">Australian Shepherd</option>
+                        <option value="Dachshund">Dachshund</option>
+                        <option value="Husky">Husky</option>
+                        <option value="Border Collie">Border Collie</option>
+                        <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
+                        <option value="Great Pyrenees">Great Pyrenees</option>
+                        <option value="American Bulldog">American Bulldog</option>
+                        <option value="Cattle Dog">Cattle Dog</option>
+                        <option value="Jack Russell Terrier">Jack Russell Terrier</option>
+                        <option value="Retriever">Retriever</option>
+                        <option value="Shih Tzu">Shih Tzu</option>
+                        <option value="Black Labrador Retriever">Black Labrador Retriever</option>
+                        <option value="Siberian Husky">Siberian Husky</option>
+                        <option value="Catahoula Leopard Dog">Catahoula Leopard Dog</option>
+                        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                        <option value="Great Dane">Great Dane</option>
+                        <option value="Miniature Pinscher">Miniature Pinscher</option>
+                      </select>
+                      <br>
+                      <select class="form-select" name="color" aria-label="Default select example">
+                        <option selected>Color</option>
+                        <option value="Black">Black</option>
+                        <option value="White / Cream">White / Cream</option>
+                        <option value="Brown / Chocolate">Brown / Chocolate</option>
+                        <option value="Tricolor (Brown, Black, & White)">Tricolor (Brown, Black, & White)</option>
+                        <option value="Bicolor">Bicolor</option>
+                        <option value="Yellow / Tan / Blond / Fawn">Yellow / Tan / Blond / Fawn</option>
+                        <option value="Brindle">Brindle</option>
+                        <option value="Apricot / Beige">Apricot / Beige</option>
+                        <option value="Red / Chestnut / Orange">Red / Chestnut / Orange</option>
+                        <option value="Gray / Blue / Silver">Gray / Blue / Silver</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Merle (Blue)">Merle (Blue)</option>
+                        <option value="Sable">Sable</option>
+                        <option value="Merle (Red)">Merle (Red)</option>
+                        <option value="Harlequin">Harlequin</option>
+                        <option value="Unanswered">Other</option>
+                      </select>
+                      <br>
+                      <select class="form-select" name="age" aria-label="Default select example">
+                        <option selected>Age</option>
+                        <option value="Baby">Baby</option>
+                        <option value="Adult">Adult</option>
+                        <option value="Young">Young</option>
+                        <option value="Senior">Senior</option>
+                      </select>
+                      <br>
+                      <select class="form-select" name="gender" aria-label="Default select example">
+                        <option selected>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                      <br>
+                      <select class="form-select" name="size" aria-label="Default select example">
+                        <option selected>Size</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Small">Small</option>
+                        <option value="Large">Large</option>
+                        <option value="Extra Large">Extra Large</option>
+                      </select>
+                      <br>
+                      <select class="form-select" name="coat" aria-label="Default select example">
+                        <option selected>Coat</option>
+                        <option value="Short">Short</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Long">Long</option>
+                        <option value="Wire">Wire</option>
+                        <option value="Curly">Curly</option>
+                        <option value="Hairless">Hairless</option>
+                        <option value="Unanswered">Others</option>
+                      </select>
+                        <br>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox1" class="form-check-label">Mix Breed</label>
+                        <input id="inlineCheckbox1" name="mix_breed" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="mix_breed" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox2" class="form-check-label">House Trained</label>
+                        <input id="inlineCheckbox2" name="house_trained" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="house_trained" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox3" class="form-check-label">Spayed Neutered</label>
+                        <input id="inlineCheckbox3" name="spayed_neutered" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary"  data-width="100" value="True" checked>
+                        <input type="hidden" name="spayed_neutered" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox4" class="form-check-label">Special Need</label>
+                        <input id="inlineCheckbox4" name="special_need" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="special_need" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox5" class="form-check-label">Shot Current</label>
+                        <input id="inlineCheckbox5" name="shot_current" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="shot_current" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox6" class="form-check-label">GW Childern</label>
+                        <input id="inlineCheckbox6" name="gw_childern" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="gw_childern" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox7" class="form-check-label">GW Dog</label>
+                        <input id="inlineCheckbox7" name="gw_dog" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="gw_dog" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox8" class="form-check-label">GW Cats</label>
+                        <input id="inlineCheckbox8" name="gw_cat" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="gw_cat" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox9" class="form-check-label">Tag Input</label>
+                        <input id="inlineCheckbox9" name="tag" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="tag" value="">
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <label for="inlineCheckbox10" class="form-check-label">Photo Input</label>
+                        <input id="inlineCheckbox10" name="photo" class="form-check-input" type="checkbox"  data-on="True" data-off="False" data-toggle="toggle" data-offstyle="secondary" data-width="100" value="True" checked>
+                        <input type="hidden" name="photo" value="">
+                      </div>
+    
+    
+                    <br>
+                    <br>
+                  <div class="d-grid">
+                    <button class="btn btn-primary btn-xl" type="submit">Submit</button>
+                  </div>
+                  
+                  
+                </form>
+              </div>
+             </div>
+            </div>
+            </div>
+        </div>
+    
+    
+    
+            </section>
+
+        <!-- unspervised-->
+        <section class="page-section bg-white" id="unspervised">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-dark mt-0">Unspervised Model -- K-MEAN</h2>
+                        <hr class="divider divider-dark" />
+                        <p class="text-dark-75 mb-4 text-start"> Seclect the input feature: predict the area safety!!
+                            <br>
+                            <br>
+                            GVA is a nonprofit whose mission is to provide free online public access to accurate information about gun-related violence in the United States. Our group is in no way affiliated with GVA.
+                            The full dataset that we used can be accessed via API or the Github link on the “API” page of this website.
+                          </p>
+                          <button class="btn btn-secondary btn-xl" data-bs-toggle="modal" data-bs-target="#unspervised_modal">Get Started!</button>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- <Modal unspervised> -->
+        <div class="modal fade" id="unspervised_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+               
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h3 class="portfolio-modal-title text-secondary text-uppercase mb-0">K-MEAN 3D Chart</h3>
+                            </div>
+                        </div>
+                        <form>
+
+                          <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+                          <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>      
+                            <script> 
+                            $(function(){
+                              $("#includedContent").load("{{url_for('static', filename='figd3.html')}}"); 
+                            });
+                            </script> 
+                            
+                            <div id="includedContent"></div>
+                        </form>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        </section>
+        
+
+        <!-- nn-->
+        <section class="page-section bg-secondary" id="nn">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Neunarl Network -- Tensorflow</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4 text-start"> Seclect the input feature: predict the area safety!!
+                            <br>
+                            <br>
+                            GVA is a nonprofit whose mission is to provide free online public access to accurate information about gun-related violence in the United States. Our group is in no way affiliated with GVA.
+                            The full dataset that we used can be accessed via API or the Github link on the “API” page of this website.
+                          </p>
+                        <a class="btn btn-light btn-xl" href="#dashboard">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - BootCampUCI - TEAM3</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

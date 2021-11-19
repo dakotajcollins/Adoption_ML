@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pet Adoption</title>
+        <!-- Favicon-->
+        <link href="{{url_for('static', filename='assets/favicon.ico')}}" rel="icon" type="image/x-icon" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        {% block styles %}
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+        {% endblock %}
+        
+        {% block scripts %}
+        <!-- Core theme JS-->
+        <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+        {% endblock %}
+        
+        
+        
+        
+        
+ 
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Pet Adoption</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ML">Manchine Learing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+          <div class="container px-4 px-lg-5 h-100">
+              <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                  <div class="col-lg-8 align-self-end">
+                      <h1 class="text-white font-weight-bold">Take Me Home!!</h1>
+                      <hr class="divider" />
+                  </div>
+                  <div class="col-lg-8 align-self-baseline">
+                      <p class="text-white-75 mb-5">We are always waiting for you to bring me home.</p>
+                      <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                  </div>
+              </div>
+          </div>
+      </header>
+        <!-- About-->
+        <section class="page-section bg-secondary" id="about">
+          <div class="container px-4 px-lg-5">
+              <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-lg-8 text-center">
+                      <h2 class="text-light mt-0">Website Presents</h2>
+                      <hr class="divider divider-light" />
+                      <p class="text-white-75 mb-4 text-start">Pet always can health your sprite and we can also help them to find a warm house. This website try to analyse the Dog Adoption rate around the United State by using Tableau. 
+                          <br>
+                          Check the Dashboard and compare each state and different type of dog adoption rate. Maybe we can find a better home for the different kind or size dog.
+                        </p>
+                      <a class="btn btn-primary btn-xl" href="#dashboard">Get Started!</a>
+                  </div>
+              </div>
+          </div>
+
+
+
+      </section>
+        <!-- Services-->
+        <section class="page-section bg-light" id="dashboard">
+          <div class="container">
+
+              <div class="row">
+                <div class="col-md-12 jumbotron text-center">
+                  <h1>Pet Adoption  Dashboard</h1>
+                  <p>Use the interactive charts below to explore the dataset</p>
+                </div>
+              </div>
+          
+              <br>
+
+              <div class='tableauPlaceholder' id='viz1637128499995' style='position: relative'><noscript>
+                  <a href='#'><img alt='Dashboard 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;D7&#47;D7FQYQD7J&#47;1_rss.png' style='border: none' /></a>
+              </noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                  <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;D7FQYQD7J' /> <param name='toolbar' value='yes' />
+                  <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;D7&#47;D7FQYQD7J&#47;1.png' /> 
+                  <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
+                  <param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                
+                  <script type='text/javascript'>                    
+                      var divElement = document.getElementById('viz1637128499995');                    
+                      var vizElement = divElement.getElementsByTagName('object')[0];                    
+                      if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                      else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                      else { vizElement.style.width='100%';vizElement.style.height='1177px';}                     
+                      var scriptElement = document.createElement('script');                    
+                      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                      vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                  </script>
+          
+          </div>
+         
+      </section>
+
+
+
+        <!-- Machine Learning-->
+        <section class="page-section MLsection" id="ML">
+          <div class="container px-4 px-lg-5 h-100">
+              <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                  <div class="col-lg-8 align-self-end">
+                      <h1 class="text-dark font-weight-bold">Machine Learning/Prediction</h1>
+                      <hr class="divider" />
+                  </div>
+                  <div class="col-lg-8 align-self-baseline">
+                      <p class="text-dark-75 mb-5">Try to explore the adoption time by useing Machine Learning.
+                          <br>
+                          Try to explore the adoption time by useing Machine Learning.
+                          <br>
+                          Try to explore the adoption time by useing Machine Learning.
+                          <br>
+                          Try to explore the adoption time by useing Machine Learning.
+                          <br>
+                          Try to explore the adoption time by useing Machine Learning.
+                          <br>
+                          Try to explore the adoption time by useing Machine Learning.
+                      </p>
+                      <a class="btn btn-primary btn-xl" href="/machinelearning">Explore More!</a>
+                  </div>
+              </div>
+          </div>
+        </section>
+
+
+
+        <!-- Contact-->
+        <section class="page-section bg-secondary" id="contact">
+          <div class="container px-4 px-lg-5">
+              <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-lg-8 col-xl-6 text-center text-light">
+                      <h2 class="mt-0">Contact Info</h2>
+                      <hr class="divider" />
+
+                  </div>
+              </div>
+              <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+
+                  <div class="col-md-2">
+                      <div class="text-center text-light">
+                        <h4>Dakota</h4>
+                      <img id="TM" src="https://ca.slack-edge.com/T022ZCD3GH4-U023YSSPN14-382b50555eee-512" class="rounded" alt="Dakota">
+                      </div>
+                    </div>
+
+                <!-- Second float -->
+                <div class="col-md-2">
+                  <div class="text-center text-light">
+                    <h4>Joyce</h4>
+                  <img id="TM" src="https://ca.slack-edge.com/T022ZCD3GH4-U0248K2R6EA-b7b24c77276e-512" class="rounded" alt="Joyce">
+                  </div>
+                </div>
+
+                <!-- Third float -->
+                <div class="col-md-2">
+                  <div class="text-center text-light">
+                    <h4>Sean</h4>
+                  <img id="TM" src="https://ca.slack-edge.com/T022ZCD3GH4-U023QQGRMGB-d5d853cf959f-512" class="rounded" alt="Sean">
+                  </div>
+                </div>
+      
+              <!-- Four float -->
+                <div class="col-md-2">
+                  <div class="text-center text-light">
+                    <h4>Trevor</h4>
+                  <img id="TM" src="https://ca.slack-edge.com/T022ZCD3GH4-U023L81RNCS-12c88f8bd0d9-512" class="rounded" alt="Trevor">
+                  </div>
+                </div>
+      
+              <!-- Five float -->
+                <div class="col-md-2">
+                  <div class="text-center text-light">
+                    <h4>Harold</h4>
+                  <img id="TM" src="https://ca.slack-edge.com/T022ZCD3GH4-U024TTJ8AKT-2c756747cece-512" class="rounded" alt="Harold">
+                  </div>
+                </div>
+              
+      
+              </div>
+              
+          </div>
+
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center text-light">
+                <h2 class="mt-0">Around the Web</h2>
+                <hr class="divider" />
+                <a class="btn btn-outline-light btn-social mx-1" href="#" target="_blank"><i class="fas fa-link"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#" target="_blank"><i class="fas fa-file-csv"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#" target="_blank"><i class="far fa-file-code"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+          
+      </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - BootCampUCI - TEAM3</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
