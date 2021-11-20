@@ -1,4 +1,5 @@
 # Load libraries
+!pip install flask_Boostrap
 from flask import Flask, jsonify
 import joblib
 from flask_bootstrap import Bootstrap
@@ -58,6 +59,43 @@ def spervised():
 
         
         x_feature=[[primary_breed,mix_breed,color,age,gender,size,coat,house_trained,spayed_neutered,special_need,shot_current,gw_childern,gw_dog,gw_cat,tag,photo]]
+
+        x_features = {[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+        x_df = pd.DataFrame(x_features)
+        
+        my_columns = ['mixed_breed', 'unknown_breed', 'house_trained', 'spayed_neutered',
+       'special_needs', 'shots_current', 'tag_input', 'photo_input',
+       'description_input', 'primary_breed_American Bulldog',
+       'primary_breed_American Staffordshire Terrier',
+       'primary_breed_Australian Cattle Dog / Blue Heeler',
+       'primary_breed_Australian Shepherd', 'primary_breed_Beagle',
+       'primary_breed_Black Labrador Retriever', 'primary_breed_Border Collie',
+       'primary_breed_Boxer', 'primary_breed_Catahoula Leopard Dog',
+       'primary_breed_Cattle Dog', 'primary_breed_Chihuahua',
+       'primary_breed_Dachshund', 'primary_breed_German Shepherd Dog',
+       'primary_breed_Great Dane', 'primary_breed_Great Pyrenees',
+       'primary_breed_Hound', 'primary_breed_Husky',
+       'primary_breed_Jack Russell Terrier',
+       'primary_breed_Labrador Retriever', 'primary_breed_Miniature Pinscher',
+       'primary_breed_Mixed Breed', 'primary_breed_Pit Bull Terrier',
+       'primary_breed_Retriever', 'primary_breed_Rottweiler',
+       'primary_breed_Shepherd', 'primary_breed_Shih Tzu',
+       'primary_breed_Siberian Husky', 'primary_breed_Speciality',
+       'primary_breed_Terrier', 'primary_breed_Yorkshire Terrier',
+       'primary_color_Apricot / Beige', 'primary_color_Bicolor',
+       'primary_color_Black', 'primary_color_Brindle',
+       'primary_color_Brown / Chocolate', 'primary_color_Golden',
+       'primary_color_Gray / Blue / Silver', 'primary_color_Harlequin',
+       'primary_color_Merle (Blue)', 'primary_color_Merle (Red)',
+       'primary_color_Red / Chestnut / Orange', 'primary_color_Sable',]
+        
+        x_df.columns = my_columns
+
+        
+       
+
+        
+
 
         print(x_feature)
 
